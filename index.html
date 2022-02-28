@@ -6,6 +6,7 @@
 html, body, div, p, code, pre, span, li, td {
   font-family: Monospace;
   color: rgb(179,179,6);
+  caret-color: #ddd;
   background: #000060;
   font-size: 1.025em; 
 }
@@ -20,7 +21,12 @@ html, body, div, p, code, pre, span, li, td {
 }
 
 .cm-activeLine {
-  background-color: #222280 !important;
+  background-color: #050565 !important;
+}
+
+
+.cm-cursor, .cm-line {
+  caret-color: #ddd !important;
 }
 
 </style>
@@ -5399,5 +5405,14 @@ window.onkeydown = (ev) => {
 getAllIds()
 
 </script>
+
+<style>
+
+.cm-cursor, .cm-line {
+  caret-color: #ddd !important;
+}
+
+</style>
+
 </body>
 </html>

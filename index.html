@@ -8,7 +8,7 @@ html, body, div, p, code, pre, span, li, td {
   color: rgb(179,179,6);
   caret-color: #ddd;
   background: #000060;
-  font-size: 1.025em; 
+  font-size: 1.15em; 
 }
 
 .pre {
@@ -29,16 +29,53 @@ html, body, div, p, code, pre, span, li, td {
   caret-color: #ddd !important;
 }
 
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.menubg {
+  font-size: 1.15em;
+  height: 1.5em;
+  background-color: rgb(144,144,144);
+  margin:0;
+  padding: 0;
+}
+
+
+.cm-editor {
+  height: 90%;
+  font-size: 0.6em;
+}
+
+
+span.key {
+  color: rgb(79,5,17);  
+}
+
+.keydescr {
+  color: #050505;  
+}
+
 </style>
 
 </head>
 
 
 <body>
+<div class="menubg"></div>
+
 <script src="editor.bundle.js"></script>
 
-def test():
-  # here is a function
+<div id="baseline">
+	<span class="key">F1</span>
+	<span class="keydescr">Help</span>
+
+	<span class="key nextkey">F3</span>
+	<span class="keydescr">Open</span>
+
+</div>
 
 <div id="help">
 

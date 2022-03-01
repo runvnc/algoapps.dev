@@ -3,7 +3,7 @@
 <title>algoapps.dev - Algorand Application Development Environment</title>
 
 <style>
-html, body, div, p, code, pre, span, li, td {
+html, body, div, p, code, pre, span, li, td, ul, a {
   font-family: Monospace;
   color: rgb(179,179,6);
   caret-color: #ddd;
@@ -54,7 +54,7 @@ span.key {
   color: rgb(79,5,17);  
 }
 
-.keydescr {
+.keydescr, .menubg {
   color: #050505;  
 }
 
@@ -67,13 +67,53 @@ span.key {
   margin-bottom: 0;
 }
 
+details.nav-menu > summary {
+    list-style: none;
+    display: inline;
+    position: relative;
+    cursor: pointer;
+}
+details.nav-menu > summary::-webkit-details-marker {
+    display: none;
+}
+details .nav-menu-inner, details .nav-menu-inner {
+    position: absolute;
+    top: 1.8rem;
+    left: 0px;
+    width: 180px;
+    z-index: 1000;
+    border: 1px solid black;
+    background-color: rgb(144,144,144);
+}
+.nav-menu-inner a {
+    display: block;
+    background: rgb(144,144,144);
+}
+
+.nav-menu-inner li, .nav-menu-inner ul {
+    background: rgb(144,144,144);
+    list-style: none;
+}
+
 </style>
 
 </head>
 
 
 <body>
-<div class="menubg"></div>
+<div class="menubg">
+<details class="nav-menu">
+    <summary>Menu</summary>
+    <div class="nav-menu-inner">
+        <ul>
+            <li><a href="/">Item one</a></li>
+            <li><a href="/">Item two</a></li>
+            <li><a href="/">Item three</a></li>
+        </ul>
+    </div>
+</details>
+
+</div>
 
 <script src="editor.bundle.js"></script>
 

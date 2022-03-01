@@ -1,14 +1,13 @@
-import {EditorState, EditorView, basicSetup} from "@codemirror/basic-setup"
+import {EditorState, EditorView, xSetup} from "./dist/index.js"
 import {javascript} from "@codemirror/lang-javascript"
+import {python} from '@codemirror/lang-python'
+
 
 let editor = new EditorView({
   state: EditorState.create({
-    extensions: [basicSetup, javascript()]
+    extensions: [xSetup, python()]
   }),
   parent: document.body
 })
-
-editor.setOption('lineNumbers', false)
-
 
 

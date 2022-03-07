@@ -7,7 +7,7 @@ html, body, div, p, code, pre, span, li, td, ul, a {
   font-family: Monospace;
   color: rgb(179,179,6);
   caret-color: #ddd;
-  background: #000060;
+  background: #101060;
   font-size: 20px;  
 }
 
@@ -20,6 +20,20 @@ html, body, div, p, code, pre, span, li, td, ul, a {
   color: rgb(20,20,20);
 }
 
+#help {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;  
+  display: none;
+  padding: 20px;
+  border: 6px double #ccc;
+  outline-offset: 13px;
+  font-weight: 500;
+  color: #222;
+}
+
 .cm-activeLine {
   background-color: #050565 !important;
 }
@@ -28,6 +42,10 @@ html, body, div, p, code, pre, span, li, td, ul, a {
 .cm-cursor, .cm-line {
   caret-color: #ddd !important;
 }
+
+.cm-focused .cm-cursor: {
+    borderLeftColor: yellow;
+  }
 
 body {
   margin: 0;
@@ -38,9 +56,10 @@ body {
 .menubg, #baseline, #baseline span {
   font-size: 1.15rem;
   height: 1.5rem;
-  background-color: rgb(144,144,144);
+  background-color: rgb(154,154,154);
   margin:0;
   padding: 0;
+  font-weight: 600;
 }
 
 
@@ -84,7 +103,7 @@ details .nav-menu-inner, details .nav-menu-inner {
     width: 180px;
     z-index: 1000;
     /* border: 2px solid black; */
-    background-color: rgb(144,144,144);
+    background-color: rgb(154,154,154);
     outline-offset: 5px;
 
     outline-color: black;
@@ -95,14 +114,14 @@ details .nav-menu-inner, details .nav-menu-inner {
 .nav-menu-inner a {
     display: block;
     text-decoration: none;
-    background: rgb(144,144,144);
+    background: rgb(154,154,154);
 
     color: black;
     font-size: 1.15rem;
 }
 
 .nav-menu-inner li, .nav-menu-inner ul {
-    background: rgb(144,144,144);
+    background: rgb(154,154,154);
     list-style: none;
 }
 
@@ -129,13 +148,23 @@ div.nav-menu-inner {
 }
 
 .key {
-  background-color: rgb(144,144,144);
+  background-color: rgb(154,154,154);
   font-size: 1.15rem;
 }
 
 .nav-menu-inner li {
   margin-bottom: 5px;
 }
+
+.ͼa {
+  color: #aaa;
+}
+
+.ͼd { 
+  color: #489b25;
+}
+
+
 </style>
 
 </head>

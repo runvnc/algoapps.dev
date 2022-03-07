@@ -21,7 +21,10 @@ import { EditorView } from "@codemirror/view";
 const FontSizeTheme = EditorView.theme({
   $: {
     fontSize: "1.25em"
-  }
+  },
+  "&.cm-focused .cm-cursor": {
+      borderLeftColor: "#B3B306"
+    },
 })
 
 const FontSizeThemeExtension: Extension = [FontSizeTheme]

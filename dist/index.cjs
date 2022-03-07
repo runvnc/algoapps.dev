@@ -21,7 +21,10 @@ var lint = require('@codemirror/lint');
 const FontSizeTheme = view.EditorView.theme({
     $: {
         fontSize: "1.25em"
-    }
+    },
+    "&.cm-focused .cm-cursor": {
+        borderLeftColor: "#B3B306"
+    },
 });
 const xSetup = [
     gutter.highlightActiveLineGutter(),

@@ -20720,7 +20720,10 @@
     const FontSizeTheme = /*@__PURE__*/EditorView.theme({
         $: {
             fontSize: "1.25em"
-        }
+        },
+        "&.cm-focused .cm-cursor": {
+            borderLeftColor: "#B3B306"
+        },
     });
     const xSetup = [
         /*@__PURE__*/highlightActiveLineGutter(),

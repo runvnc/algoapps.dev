@@ -8,7 +8,7 @@ html, body, div, p, code, pre, span, li, td, ul, a {
   color: rgb(179,179,6);
   caret-color: #ddd;
   background: #000060;
-  font-size: 12pt; 
+  font-size: 20px;  
 }
 
 .pre {
@@ -23,7 +23,7 @@ html, body, div, p, code, pre, span, li, td, ul, a {
 .cm-activeLine {
   background-color: #050565 !important;
 }
-
+  
 
 .cm-cursor, .cm-line {
   caret-color: #ddd !important;
@@ -36,8 +36,8 @@ body {
 }
 
 .menubg, #baseline, #baseline span {
-  font-size: 1.15em;
-  height: 1.5em;
+  font-size: 1.15rem;
+  height: 1.5rem;
   background-color: rgb(144,144,144);
   margin:0;
   padding: 0;
@@ -61,7 +61,7 @@ span.key {
 #baseline span.nextkey {
   padding: 0;
   margin-top: 0;
-  height: 1em;
+  height: 1rem;
   display: inline-block;
   margin-left: 50px;
   margin-bottom: 0;
@@ -72,22 +72,33 @@ details.nav-menu > summary {
     display: inline;
     position: relative;
     cursor: pointer;
+    font-size: 1.15rem;
 }
 details.nav-menu > summary::-webkit-details-marker {
     display: none;
 }
 details .nav-menu-inner, details .nav-menu-inner {
     position: absolute;
-    top: 1.8rem;
+    top: 1.5rem;
     left: 0px;
     width: 180px;
     z-index: 1000;
-    border: 1px solid black;
+    /* border: 2px solid black; */
     background-color: rgb(144,144,144);
+    outline-offset: 5px;
+
+    outline-color: black;
+    outline-style: solid;
+    outline-offset: -15px;
+    outline-width: 3px;    
 }
 .nav-menu-inner a {
     display: block;
+    text-decoration: none;
     background: rgb(144,144,144);
+
+    color: black;
+    font-size: 1.15rem;
 }
 
 .nav-menu-inner li, .nav-menu-inner ul {
@@ -95,6 +106,36 @@ details .nav-menu-inner, details .nav-menu-inner {
     list-style: none;
 }
 
+/*
+.nav-menu-inner a:hover, .nav-menu-inner li:hover, .nav-menu-inner span:hover {
+  background-color: green;
+} */
+
+.nav-menu-inner ul {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+div.nav-menu-inner {
+  width: 13rem;
+}
+
+.nav-menu summary {
+  padding-left:15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 1.15rem;
+}
+
+.key {
+  background-color: rgb(144,144,144);
+  font-size: 1.15rem;
+}
+
+.nav-menu-inner li {
+  margin-bottom: 5px;
+}
 </style>
 
 </head>
@@ -103,12 +144,12 @@ details .nav-menu-inner, details .nav-menu-inner {
 <body>
 <div class="menubg">
 <details class="nav-menu">
-    <summary>Menu</summary>
+    <summary><span class="key">F</span>ile</summary>
     <div class="nav-menu-inner">
         <ul>
-            <li><a href="/">Item one</a></li>
-            <li><a href="/">Item two</a></li>
-            <li><a href="/">Item three</a></li>
+            <li><a href="/"><span class="key">N</span>ew</a></li>
+            <li><a href="/"><span class="key">O</span>pen &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F3</a></li>
+            <li><a href="/">Save <span class="key">a</span>s...</a></li>
         </ul>
     </div>
 </details>

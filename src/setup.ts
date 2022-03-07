@@ -20,7 +20,7 @@ import { EditorView } from "@codemirror/view";
 
 const FontSizeTheme = EditorView.theme({
   $: {
-    fontSize: "1.15em"
+    fontSize: "1.25em"
   }
 })
 

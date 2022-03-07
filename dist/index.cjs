@@ -20,7 +20,7 @@ var lint = require('@codemirror/lint');
 
 const FontSizeTheme = view.EditorView.theme({
     $: {
-        fontSize: "1.15em"
+        fontSize: "1.25em"
     }
 });
 const xSetup = [

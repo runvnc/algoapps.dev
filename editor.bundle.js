@@ -20719,7 +20719,7 @@
 
     const FontSizeTheme = /*@__PURE__*/EditorView.theme({
         $: {
-            fontSize: "1.15em"
+            fontSize: "1.25em"
         }
     });
     const xSetup = [

@@ -3,12 +3,17 @@
 <title>algoapps.dev - Algorand Application Development Environment</title>
 
 <style>
-html, body, div, p, code, pre, span, li, td, ul, a {
+html, body, div, p, code, pre, span, li, td, ul, a, menu {
   font-family: Monospace;
   color: rgb(179,179,6);
   caret-color: #ddd;
   background: #101060;
   font-size: 20px;  
+
+}
+
+body {
+  filter: brightness(1.5);
 }
 
 .pre {
@@ -23,7 +28,7 @@ html, body, div, p, code, pre, span, li, td, ul, a {
 #help {
   position: absolute;
   top: 15%;
-  left: 15%;
+  left: 25%;
   width: 70%;
   height: 70%;  
   display: none;
@@ -32,6 +37,7 @@ html, body, div, p, code, pre, span, li, td, ul, a {
   outline-offset: 13px;
   font-weight: 500;
   color: #222;
+  z-index: 200;
 }
 
 .cm-activeLine {
@@ -70,7 +76,8 @@ body {
 
 
 span.key {
-  color: rgb(79,5,17);  
+  /* color: rgb(79,5,17); */
+  color: rgb(99,25,37);
 }
 
 .keydescr, .menubg {
@@ -120,17 +127,17 @@ details .nav-menu-inner, details .nav-menu-inner {
     font-size: 1.15rem;
 }
 
-.nav-menu-inner li, .nav-menu-inner ul {
+.nav-menu-inner li, .nav-menu-inner menu {
     background: rgb(154,154,154);
     list-style: none;
 }
 
-/*
+
 .nav-menu-inner a:hover, .nav-menu-inner li:hover, .nav-menu-inner span:hover {
   background-color: green;
-} */
+}
 
-.nav-menu-inner ul {
+.nav-menu-inner menu {
   padding-top: 10px;
   padding-bottom: 10px;
 
@@ -175,11 +182,11 @@ div.nav-menu-inner {
 <details class="nav-menu">
     <summary><span class="key">F</span>ile</summary>
     <div class="nav-menu-inner">
-        <ul>
+        <menu>
             <li><a href="/"><span class="key">N</span>ew</a></li>
             <li><a href="/"><span class="key">O</span>pen &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F3</a></li>
             <li><a href="/">Save <span class="key">a</span>s...</a></li>
-        </ul>
+        </menu>
     </div>
 </details>
 

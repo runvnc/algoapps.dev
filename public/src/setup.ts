@@ -43,8 +43,8 @@ export const xSetup: Extension = [
   closeBrackets(),
   autocompletion(),
   rectangularSelection(),
-  highlightActiveLine(),
   highlightSelectionMatches(),
+  highlightActiveLine(),
   FontSizeTheme,
   keymap.of([
     ...closeBracketsKeymap,

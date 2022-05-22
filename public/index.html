@@ -41,7 +41,7 @@ body {
 }
 
 .cm-activeLine {
-  background-color: #050565 !important;
+  background-color: #252585 !important;
 }
   
 
@@ -216,8 +216,18 @@ div.nav-menu-inner {
   color: #aaa;
 }
 
+.ͼb {
+  color: teal;
+}
+
+
 .ͼd { 
   color: #489b25;
+}
+
+.ͼf {
+ color: rgb(179 129 6);
+
 }
 
 summary, li {
@@ -5593,6 +5603,8 @@ Defaults to false.</p></li>
     </section>
   </div>
 
+<script src="levenshtein.js"></script>
+
 <script>
 const se = (s) => document.querySelector(s)
 const id = (s) => document.getElementById(s)
@@ -5668,21 +5680,59 @@ async function getJson(url, obj) {
   return await (await fetch(`${url}?${q_}`)).json()
 }
 
+const byLev = (a, b) => {
+  if ( a[1] < b[1] ) return -1
+  if ( a[1] > b[1] ) return 1
+  return 0
+}
+
+
+function highlightClosest(source, lineNum) {
+  let src = view.state.doc.toString()  
+  let lines = src.split("\n")
+  let list = []
+  let i = 0
+  for (let l of lines) {
+    list.push([i+1, lev(source, l), l])
+    i++
+  }
+  let sorted = list.sort(byLev)
+  print({sorted})
+  let match = sorted[0]
+  print({linenum:match[0]})
+  print(view.state.doc.line(match[0]))
+  view.dispatch({selection: {anchor: view.state.doc.line(match[0])}})
+
+}
+
 async function compile() {
   let res = await getJson(`/compile/${addr}/${fname}`)
-  if (res.pytealError) {
-    closeMenu()
+  closeMenu()
+  if (res.pytealError) {    
+    print(res.pytealError)
     let lines = res.pytealError.split("\n")
+    print(lines)
     let prev = null
+    let lineNum = -1
+    let matchLine
     for (let l of lines) {
-      if (prev.includes('Error:')) {
-        alert(l)
+      if (l.includes(' line ')) {
+        let lpos = l.indexOf(' line ')+6
+        let toks = l.substr(lpos).split(' ')
+        lineNum= toks[0]
+      }
+      if (l?.includes('Error:')) {
+        print("Line with error is:", prev, lineNum)
+        matchLine = prev
+                
       }
       prev = l
     }
-    alert(res.pytealError)
+    console.log(res.pytealError)
+    highlightClosest(matchLine, lineNum)
   } else {
-    alert('OK')
+    console.log('OK')
+    console.log(res)
   }
   console.log('done')
   console.log(res)

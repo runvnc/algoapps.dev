@@ -1,0 +1,4 @@
+@Subroutine(uint64)
+def test():
+  return ( Trus )
+

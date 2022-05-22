@@ -241,7 +241,7 @@ details[open] summary, details[open] summary * {
         <menu>
             <li><a href="/"><span class="key">N</span>ew</a></li>
             <li><a href="/"><span class="key">O</span>pen &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F3</a></li>
-            <li><a href="/">Save <span class="key">a</span>s...</a></li>
+            <li><a href="#" onclick="return save()">Save <span class="key">a</span>s...</a></li>
         </menu>
     </div>
 </details>
@@ -5642,6 +5642,8 @@ window.onkeydown = (ev) => {
   
 getAllIds()
 
+let print = console.log
+
 const All_Details = document.querySelectorAll('details');
 
 All_Details.forEach(deet=>{
@@ -5656,16 +5658,48 @@ function toggleOpenOneOnly(e) {
   }
 }
 
+async function getText(url, obj) {
+  let q_ = new URLSearchParams(obj).toString()
+  return await (await fetch(`${url}?${q_}`)).text()
+}
+
+async function getJson(url, obj) {
+  let q_ = new URLSearchParams(obj).toString()
+  return await (await fetch(`${url}?${q_}`)).json()
+}
+
 async function compile() {
-  console.log("Compile!")
-  let res = await (await fetch(`/compile/${addr}/${fname}`)).text()
+  let res = await getJson(`/compile/${addr}/${fname}`)
+  if (res.pytealError) {
+    closeMenu()
+    let lines = res.pytealError.split("\n")
+    let prev = null
+    for (let l of lines) {
+      if (prev.includes('Error:')) {
+        alert(l)
+      }
+      prev = l
+    }
+    alert(res.pytealError)
+  } else {
+    alert('OK')
+  }
   console.log('done')
   console.log(res)
+  
+}
+
+function closeMenu() {
+  All_Details.forEach(deet=>{
+    if (deet!=this && deet.open) deet.open = false
+  })
 }
 
 async function save() {
   let source = view.state.doc.toString()
-  
+  let res = await getJson(`/save/${addr}/${fname}`,{source})
+  print(res)
+  closeMenu()
 }
 
 let fname = Date.now() + '.py'

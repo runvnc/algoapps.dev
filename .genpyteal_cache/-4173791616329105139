@@ -1,0 +1,7 @@
+def app():
+    return If( args_[0] == Bytes('hello'), 
+          Return( Int(1) )
+        , 
+          Return( Int(0) )
+    
+       )

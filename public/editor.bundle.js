@@ -22572,6 +22572,6 @@
       parent: document.body
     });
 
-    window.editor = editor;
+    window.view = editor;
 
 })();

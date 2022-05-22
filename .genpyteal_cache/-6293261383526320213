@@ -1,0 +1,5 @@
+def app():
+    return  Seq(
+    	Log(Bytes("Compiling to TEAL")),
+    	Log(Concat(Bytes("First arg is "),args[0])),
+    	Return( Int(1) ) )

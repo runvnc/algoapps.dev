@@ -10,5 +10,5 @@ let editor = new EditorView({
   parent: document.body
 })
 
-window.editor = editor
+window.view = editor
 

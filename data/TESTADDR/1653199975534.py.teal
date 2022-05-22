@@ -1,0 +1,5 @@
+#pragma version 6
+byte "Welcome to the matrix."
+log
+int 1
+return

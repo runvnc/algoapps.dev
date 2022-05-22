@@ -1,0 +1,10 @@
+def app():
+    return If( args_[0] == Bytes('test'), 
+            Seq(
+    	       Log(Bytes('OK')),
+    	       Return( Int(1) ) )
+    
+        , 
+          Return( Int(0) )
+    
+       )

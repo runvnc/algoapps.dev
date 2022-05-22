@@ -1,0 +1,4 @@
+def app():
+    return  Seq(
+    	Log(Bytes("Welcome to the matrix.")),
+    	Return( Int(1) ) )

@@ -1,0 +1,4 @@
+def app():
+    return  Seq(
+    	Log(Bytes("Another app")),
+    	Return( Int(1) ) )

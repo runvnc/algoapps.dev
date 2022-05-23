@@ -41,7 +41,8 @@ body {
 }
 
 .cm-activeLine {
-  background-color: #252585 !important;
+  background-color: #101060 !important; /* #252585 !important; */
+  box-shadow: inset 0 -1px #252585 !important;
 }
   
 
@@ -5699,10 +5700,10 @@ function highlightClosest(source, lineNum) {
   let sorted = list.sort(byLev)
   print({sorted})
   let match = sorted[0]
-  print({linenum:match[0]})
-  print(view.state.doc.line(match[0]))
-  view.dispatch({selection: {anchor: view.state.doc.line(match[0])}})
-
+  //print({linenum:match[0]})
+  //print(view.state.doc.line(match[0]))
+  //view.dispatch({selection: {anchor: view.state.doc.line(match[0])}})
+  alert(match[2])
 }
 
 async function compile() {

@@ -5717,16 +5717,16 @@ async function compile() {
     let lineNum = -1
     let matchLine
     for (let l of lines) {
-      if (l.includes(' line ')) {
-        let lpos = l.indexOf(' line ')+6
-        let toks = l.substr(lpos).split(' ')
-        lineNum= toks[0]
+      if (prev?.includes(fname)) {
+        let lpos = prev.indexOf(' line ')+6
+        let toks = prev.substr(lpos).split(' ')
+        lineNum = toks[0]
+	matchLine = l
       }
-      if (l?.includes('Error:')) {
-        print("Line with error is:", prev, lineNum)
-        matchLine = prev
+      //if (l?.includes('Error:')) {
+        print("Line with error is:", l, lineNum)        
                 
-      }
+      //}
       prev = l
     }
     console.log(res.pytealError)
@@ -5753,7 +5753,7 @@ async function save() {
   closeMenu()
 }
 
-let fname = Date.now() + '.py'
+let fname = 'test.py'
 let addr = 'TESTADDR'
 
 
